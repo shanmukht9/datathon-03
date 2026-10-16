@@ -1,4 +1,4 @@
-# Nagrik — Datathon Round 1 Prototype
+# Nagrik — A Prototype
 > **"One civic issue, many citizen reports, one evidence-backed priority, and a verified path to resolution."**
 
 ---
