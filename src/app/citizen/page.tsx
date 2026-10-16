@@ -216,7 +216,7 @@ export default function CitizenPage() {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ width: 32, height: 32, background: '#FFB21A', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem' }}>🏙️</div>
-          <span style={{ fontWeight: 700, color: '#F0F0F2' }}>CivicPriority</span>
+          <span style={{ fontWeight: 700, color: '#F0F0F2' }}>Nagrik</span>
           <span className="badge badge-green" style={{ marginLeft: '0.25rem' }}>Citizen Portal</span>
         </div>
         <button className="btn btn-ghost btn-sm" onClick={() => router.push('/')}>← Home</button>

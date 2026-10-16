@@ -1,5 +1,5 @@
 /**
- * @fileoverview Shared TypeScript types for CivicPriority platform.
+ * @fileoverview Shared TypeScript types for Nagrik platform.
  * These types are used across data ingestion, ML, scoring, UI, and persistence layers.
  */
 

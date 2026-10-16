@@ -1,5 +1,5 @@
 /**
- * @fileoverview Standalone ML Training Script for CivicPriority.
+ * @fileoverview Standalone ML Training Script for Nagrik.
  * Trains logistic regression model from scratch using TypeScript.
  * Reads incidents.csv, splits chronologically (80/20 train/test),
  * trains via batch gradient descent with L2 regularization,
@@ -19,7 +19,7 @@ import { IncidentRow } from '../src/lib/types';
  */
 async function main(): Promise<void> {
   console.log('====================================================');
-  console.log(' CivicPriority — Machine Learning Training Pipeline ');
+  console.log(' Nagrik — Machine Learning Training Pipeline        ');
   console.log(' Supervised Logistic Regression (Pure TypeScript)   ');
   console.log('====================================================\n');
 

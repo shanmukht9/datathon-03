@@ -1,5 +1,5 @@
 /**
- * @fileoverview Unit tests for the CivicPriority Explainable Priority Engine.
+ * @fileoverview Unit tests for the Nagrik Explainable Priority Engine.
  */
 
 import { describe, it, expect } from 'vitest';

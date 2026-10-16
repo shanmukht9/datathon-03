@@ -525,7 +525,7 @@ export default function OfficerPage() {
       <header style={{ background: '#17191C', borderBottom: '1px solid #2A2D32', padding: '0.875rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ width: 32, height: 32, background: '#FFB21A', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem' }}>🏙️</div>
-          <span style={{ fontWeight: 700, color: '#F0F0F2' }}>CivicPriority</span>
+          <span style={{ fontWeight: 700, color: '#F0F0F2' }}>Nagrik</span>
           <span className="badge badge-yellow">Officer Dashboard</span>
           {user.userId && <span style={{ fontSize: '0.8125rem', color: '#6B7280' }}>· {user.userId}</span>}
           {user.department && <span style={{ fontSize: '0.8125rem', color: '#6B7280' }}>· {user.department}</span>}

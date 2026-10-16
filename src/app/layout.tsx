@@ -10,10 +10,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'CivicPriority — Evidence-Based City Action',
+  title: 'Nagrik — Evidence-Based City Action',
   description:
-    'CivicPriority is an explainable civic-issue prioritization and resolution platform. From Citizen Reports to Evidence-Based City Action.',
-  keywords: ['civic', 'smart city', 'pothole', 'infrastructure', 'municipal', 'priority'],
+    'Nagrik is an explainable civic-issue prioritization and resolution platform. From Citizen Reports to Evidence-Based City Action.',
+  keywords: ['nagrik', 'civic', 'smart city', 'pothole', 'infrastructure', 'municipal', 'priority'],
 };
 
 /**

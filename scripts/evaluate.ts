@@ -1,5 +1,5 @@
 /**
- * @fileoverview Standalone Model Evaluation Script for CivicPriority.
+ * @fileoverview Standalone Model Evaluation Script for Nagrik.
  * Loads trained model parameters from model-params.json and runs comprehensive
  * evaluation on the chronological test split of incidents.csv.
  */
@@ -17,7 +17,7 @@ import { IncidentRow, ModelParameters } from '../src/lib/types';
  */
 async function main(): Promise<void> {
   console.log('====================================================');
-  console.log(' CivicPriority — Model Evaluation & Diagnostics    ');
+  console.log(' Nagrik — Model Evaluation & Diagnostics           ');
   console.log(' Supervised Logistic Regression (Pure TypeScript)   ');
   console.log('====================================================\n');
 

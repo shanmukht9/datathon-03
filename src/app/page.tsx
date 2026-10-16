@@ -1,5 +1,5 @@
 /**
- * @fileoverview Landing page — role selection for CivicPriority.
+ * @fileoverview Landing page — role selection for Nagrik.
  * Three clear entry points: Citizen, Officer, Worker.
  * Demo identity flow with no real authentication.
  */
@@ -160,14 +160,14 @@ export default function HomePage() {
               flexShrink: 0,
             }}>🏙️</div>
             <h1 style={{ fontSize: '2.25rem', fontWeight: 800, color: '#F0F0F2', letterSpacing: '-0.03em' }}>
-              Civic<span style={{ color: '#FFB21A' }}>Priority</span>
+              Nag<span style={{ color: '#FFB21A' }}>rik</span>
             </h1>
           </div>
           <p style={{ fontSize: '1.25rem', color: '#9CA3AF', fontWeight: 400, marginBottom: '1rem', lineHeight: 1.5 }}>
             From Citizen Reports to Evidence-Based City Action.
           </p>
           <p style={{ fontSize: '0.9375rem', color: '#6B7280', lineHeight: 1.6, maxWidth: 560, margin: '0 auto' }}>
-            CivicPriority unifies citizen reports, historical incidents, and public complaints
+            Nagrik unifies citizen reports, historical incidents, and public complaints
             into an explainable, ML-backed priority queue — giving municipal officers a transparent,
             evidence-driven path to resolution.
           </p>
@@ -266,7 +266,7 @@ export default function HomePage() {
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem',
       }}>
         <span style={{ fontSize: '0.8125rem', color: '#6B7280' }}>
-          CivicPriority — Datathon Round 1 Prototype
+          Nagrik — Datathon Round 1 Prototype
         </span>
         <span style={{ fontSize: '0.8125rem', color: '#6B7280' }}>
           Data: Synthetic educational dataset · Not for real public-safety decisions

@@ -1,5 +1,5 @@
 /**
- * @fileoverview Global React context for CivicPriority application state.
+ * @fileoverview Global React context for Nagrik application state.
  *
  * Manages:
  * - Citizen reports

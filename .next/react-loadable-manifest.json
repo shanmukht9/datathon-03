@@ -1,0 +1,32 @@
+{
+  "..\\node_modules\\next\\dist\\client\\components\\react-dev-overlay\\utils\\use-websocket.js -> @vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts": {
+    "id": "..\\node_modules\\next\\dist\\client\\components\\react-dev-overlay\\utils\\use-websocket.js -> @vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_next_dist_client_dev_noop-turbopack-hmr_js.js"
+    ]
+  },
+  "app\\citizen\\page.tsx -> @/components/CivicMap": {
+    "id": "app\\citizen\\page.tsx -> @/components/CivicMap",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_CivicMap_tsx.js"
+    ]
+  },
+  "app\\officer\\page.tsx -> @/components/CivicMap": {
+    "id": "app\\officer\\page.tsx -> @/components/CivicMap",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_CivicMap_tsx.js"
+    ]
+  },
+  "components\\CivicMap.tsx -> leaflet": {
+    "id": "components\\CivicMap.tsx -> leaflet",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_leaflet_dist_leaflet-src_js.js"
+    ]
+  },
+  "context\\AppContext.tsx -> @/lib/priorityEngine": {
+    "id": "context\\AppContext.tsx -> @/lib/priorityEngine",
+    "files": [
+      "static/chunks/_app-pages-browser_src_lib_priorityEngine_ts.js"
+    ]
+  }
+}

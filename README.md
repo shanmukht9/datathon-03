@@ -1,11 +1,11 @@
-# CivicPriority — Datathon Round 1 Prototype
+# Nagrik — Datathon Round 1 Prototype
 > **"One civic issue, many citizen reports, one evidence-backed priority, and a verified path to resolution."**
 
 ---
 
 ## 1. Executive Summary & Vision
 
-**CivicPriority** is an explainable civic-issue prioritization and resolution platform for smart cities. It bridges the gap between public dissatisfaction and municipal action:
+**Nagrik** is an explainable civic-issue prioritization and resolution platform for smart cities. It bridges the gap between public dissatisfaction and municipal action:
 
 1. **Citizen Reporting Portal**: Mobile-responsive, high-contrast interface allowing citizens to photograph potholes, flooding, drainage issues, or traffic signal outages, capture or pin their coordinates, and receive instant trackable issue reference IDs with local persistence.
 2. **Intelligent Deduplication & Priority Scoring**: Automatically identifies and groups duplicate reports within spatial and temporal proximity, incrementing confirmation evidence without score inflation.

@@ -342,7 +342,7 @@ export default function WorkerPage() {
       <header style={{ background: '#17191C', borderBottom: '1px solid #2A2D32', padding: '0.875rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ width: 32, height: 32, background: '#FFB21A', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem' }}>🏙️</div>
-          <span style={{ fontWeight: 700, color: '#F0F0F2' }}>CivicPriority</span>
+          <span style={{ fontWeight: 700, color: '#F0F0F2' }}>Nagrik</span>
           <span className="badge badge-purple">Field Worker</span>
           <span style={{ fontSize: '0.8125rem', color: '#6B7280' }}>· {workerId}</span>
         </div>
