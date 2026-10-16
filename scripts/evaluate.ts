@@ -64,12 +64,16 @@ async function main(): Promise<void> {
 
   console.log('\n[3/3] Held-Out Test Evaluation Results:');
   console.log(`      • Test Samples:     ${testSet.length.toLocaleString()}`);
-  console.log(`      • Actual Unresolved: ${metrics.unresolvedCount.toLocaleString()} (${(metrics.unresolvedRate * 100).toFixed(1)}%)`);
+  console.log(
+  `      • Actual Unresolved: ${metrics.classBalance.unresolved.toLocaleString()} (${metrics.testSize > 0 ? ((metrics.classBalance.unresolved / metrics.testSize) * 100).toFixed(1) : "0.0"}%)`
+);
   console.log(`      • Accuracy:         ${(metrics.accuracy * 100).toFixed(2)}%`);
   console.log(`      • Precision:        ${(metrics.precision * 100).toFixed(2)}%`);
   console.log(`      • Recall:           ${(metrics.recall * 100).toFixed(2)}%`);
-  console.log(`      • F1 Score:         ${(metrics.f1Score * 100).toFixed(2)}%`);
-  console.log(`      • ROC-AUC:          ${metrics.rocAuc.toFixed(4)}`);
+console.log(`      • F1 Score:         ${(metrics.f1 * 100).toFixed(2)}%`);
+ console.log(
+  `      • ROC-AUC:          ${metrics.rocAuc !== null ? metrics.rocAuc.toFixed(4) : "N/A (only one class present)"}`
+);
 
   console.log('\nConfusion Matrix:');
   console.log('                 Predicted Unresolved   Predicted Resolved');

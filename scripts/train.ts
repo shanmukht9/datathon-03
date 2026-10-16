@@ -51,12 +51,12 @@ async function main(): Promise<void> {
   console.log(`      • Total Incidents:    ${incidentRecords.length.toLocaleString()}`);
   console.log(`      • Training Set Size:  ${evaluation.trainSize.toLocaleString()}`);
   console.log(`      • Test Set Size:      ${evaluation.testSize.toLocaleString()}`);
-  console.log(`      • Test Unresolved:    ${evaluation.unresolvedCount.toLocaleString()} (${(evaluation.unresolvedRate * 100).toFixed(1)}%)`);
+  console.log(`      • Test Unresolved:    ${evaluation.classBalance.unresolved.toLocaleString()} (${evaluation.testSize > 0 ? ((evaluation.classBalance.unresolved / evaluation.testSize) * 100).toFixed(1) : "0.0"}%)`);
   console.log(`      • Accuracy:           ${(evaluation.accuracy * 100).toFixed(2)}%`);
   console.log(`      • Precision:          ${(evaluation.precision * 100).toFixed(2)}%`);
   console.log(`      • Recall:             ${(evaluation.recall * 100).toFixed(2)}%`);
-  console.log(`      • F1 Score:           ${(evaluation.f1Score * 100).toFixed(2)}%`);
-  console.log(`      • ROC-AUC:            ${evaluation.rocAuc.toFixed(4)}`);
+console.log(`      • F1 Score:           ${(evaluation.f1 * 100).toFixed(2)}%`);
+console.log(`      • ROC-AUC:            ${evaluation.rocAuc !== null ? evaluation.rocAuc.toFixed(4) : "N/A (only one class present)"}`);
   console.log(`      • Confusion Matrix:   TP=${evaluation.confusionMatrix.tp}, FP=${evaluation.confusionMatrix.fp}, TN=${evaluation.confusionMatrix.tn}, FN=${evaluation.confusionMatrix.fn}`);
 
   console.log('\n[4/4] Persisting model parameters and evaluation metrics...');

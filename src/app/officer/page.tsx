@@ -333,83 +333,139 @@ function InterventionPanel({ issue }: { issue: CanonicalIssue }) {
   );
 }
 
-function getInterventions(category: IssueCategory) {
-  const base = [
+
+type Intervention = {
+  id: string;
+  title: string;
+  category: IssueCategory;
+  description: string;
+  urgency: 'Immediate' | 'Short-term' | 'Planned';
+  estimatedCostLabel: string;
+  expectedBenefit: string;
+  feasibility: 'High' | 'Medium' | 'Low';
+  recommendationReason: string;
+};
+
+function getInterventions(category: IssueCategory): Intervention[] {
+  const base: Intervention[] = [
     {
-      id: 'inspect', title: 'Site Inspection', category,
+      id: 'inspect',
+      title: 'Site Inspection',
+      category,
       description: 'Send field worker to confirm issue severity and take detailed photographs.',
-      urgency: 'Immediate' as const, estimatedCostLabel: '₹500–2,000 (illustrative)',
+      urgency: 'Immediate',
+      estimatedCostLabel: '₹500–2,000 (illustrative)',
       expectedBenefit: 'Accurate scope assessment before committing resources.',
-      feasibility: 'High' as const,
+      feasibility: 'High',
       recommendationReason: 'Always the first step before any major intervention.',
     },
   ];
 
-  const specific: Record<IssueCategory, typeof base[0][]> = {
-    pothole: [{
-      id: 'patch', title: 'Cold-Mix Patching', category: 'pothole',
-      description: 'Apply cold-mix asphalt to seal potholes. Temporary fix for urgent cases.',
-      urgency: 'Short-term' as const, estimatedCostLabel: '₹5,000–20,000/pothole (illustrative)',
-      expectedBenefit: 'Immediate road safety improvement and vehicle damage reduction.',
-      feasibility: 'High' as const,
-      recommendationReason: 'Recommended for high-traffic arterial roads with deep potholes.',
-    }],
-    road_damage: [{
-      id: 'repave', title: 'Road Resurfacing', category: 'road_damage',
-      description: 'Hot-mix asphalt resurfacing for severely damaged road sections.',
-      urgency: 'Planned' as const, estimatedCostLabel: '₹50,000–5,00,000/100m (illustrative)',
-      expectedBenefit: 'Long-term road quality improvement; reduces recurring complaints.',
-      feasibility: 'Medium' as const,
-      recommendationReason: 'Suitable when multiple potholes cluster in a section.',
-    }],
-    flooding: [{
-      id: 'pump', title: 'Emergency Pumping', category: 'flooding',
-      description: 'Deploy mobile water pumps to clear standing floodwater.',
-      urgency: 'Immediate' as const, estimatedCostLabel: '₹8,000–25,000/day (illustrative)',
-      expectedBenefit: 'Immediate access restoration and health risk reduction.',
-      feasibility: 'High' as const,
-      recommendationReason: 'Critical when flooding blocks school/hospital access.',
-    }],
-    drainage: [{
-      id: 'desilting', title: 'Drain Desilting', category: 'drainage',
-      description: 'Mechanical desilting and clearance of blocked drainage channels.',
-      urgency: 'Short-term' as const, estimatedCostLabel: '₹15,000–60,000 (illustrative)',
-      expectedBenefit: 'Prevents recurring flooding; reduces mosquito breeding sites.',
-      feasibility: 'High' as const,
-      recommendationReason: 'Most effective permanent solution for drainage blockage.',
-    }],
-    streetlight: [{
-      id: 'bulb', title: 'Lamp Replacement', category: 'streetlight',
-      description: 'Replace faulty streetlight bulbs with energy-efficient LEDs.',
-      urgency: 'Short-term' as const, estimatedCostLabel: '₹3,000–12,000/lamp (illustrative)',
-      expectedBenefit: 'Improved pedestrian and road safety at night.',
-      feasibility: 'High' as const,
-      recommendationReason: 'Quick win for high-pedestrian-activity areas.',
-    }],
-    traffic_signal: [{
-      id: 'signal-repair', title: 'Signal Repair/Recalibration', category: 'traffic_signal',
-      description: 'Inspect and repair faulty traffic signal electronics and timing.',
-      urgency: 'Immediate' as const, estimatedCostLabel: '₹10,000–80,000 (illustrative)',
-      expectedBenefit: 'Reduces collision risk at critical junctions.',
-      feasibility: 'Medium' as const,
-      recommendationReason: 'Highest priority at junctions with pedestrian crossing.',
-    }],
-    pedestrian_safety: [{
-      id: 'ped-infra', title: 'Pedestrian Infrastructure', category: 'pedestrian_safety',
-      description: 'Install or repair footpaths, crossings, guardrails, or signage.',
-      urgency: 'Short-term' as const, estimatedCostLabel: '₹30,000–2,00,000 (illustrative)',
-      expectedBenefit: 'Reduces pedestrian injury risk, especially near schools.',
-      feasibility: 'Medium' as const,
-      recommendationReason: 'Prioritise if near school zone or hospital.',
-    }],
-    collision: [{
-      id: 'speed-control', title: 'Speed Mitigation Measures', category: 'collision',
-      description: 'Install speed humps, signage, or rumble strips at collision-prone spots.',
-      urgency: 'Short-term' as const, estimatedCostLabel: '₹20,000–1,00,000 (illustrative)',
-      expectedBenefit: 'Reduces collision frequency and severity.',
-      feasibility: 'High' as const,
-      recommendationReason: 'Data-driven placement at historically high-collision locations.',
-    }],
+  const specific: Record<IssueCategory, Intervention[]> = {
+    pothole: [
+      {
+        id: 'patch',
+        title: 'Cold-Mix Patching',
+        category: 'pothole',
+        description: 'Apply cold-mix asphalt to seal potholes. Temporary fix for urgent cases.',
+        urgency: 'Short-term',
+        estimatedCostLabel: '₹5,000–20,000/pothole (illustrative)',
+        expectedBenefit: 'Immediate road safety improvement and vehicle damage reduction.',
+        feasibility: 'High',
+        recommendationReason: 'Recommended for high-traffic arterial roads with deep potholes.',
+      },
+    ],
+    road_damage: [
+      {
+        id: 'repave',
+        title: 'Road Resurfacing',
+        category: 'road_damage',
+        description: 'Hot-mix asphalt resurfacing for severely damaged road sections.',
+        urgency: 'Planned',
+        estimatedCostLabel: '₹50,000–5,00,000/100m (illustrative)',
+        expectedBenefit: 'Long-term road quality improvement; reduces recurring complaints.',
+        feasibility: 'Medium',
+        recommendationReason: 'Suitable when multiple potholes cluster in a section.',
+      },
+    ],
+    flooding: [
+      {
+        id: 'pump',
+        title: 'Emergency Pumping',
+        category: 'flooding',
+        description: 'Deploy mobile water pumps to clear standing floodwater.',
+        urgency: 'Immediate',
+        estimatedCostLabel: '₹8,000–25,000/day (illustrative)',
+        expectedBenefit: 'Immediate access restoration and health risk reduction.',
+        feasibility: 'High',
+        recommendationReason: 'Critical when flooding blocks school/hospital access.',
+      },
+    ],
+    drainage: [
+      {
+        id: 'desilting',
+        title: 'Drain Desilting',
+        category: 'drainage',
+        description: 'Mechanical desilting and clearance of blocked drainage channels.',
+        urgency: 'Short-term',
+        estimatedCostLabel: '₹15,000–60,000 (illustrative)',
+        expectedBenefit: 'Prevents recurring flooding; reduces mosquito breeding sites.',
+        feasibility: 'High',
+        recommendationReason: 'Most effective permanent solution for drainage blockage.',
+      },
+    ],
+    streetlight: [
+      {
+        id: 'bulb',
+        title: 'Lamp Replacement',
+        category: 'streetlight',
+        description: 'Replace faulty streetlight bulbs with energy-efficient LEDs.',
+        urgency: 'Short-term',
+        estimatedCostLabel: '₹3,000–12,000/lamp (illustrative)',
+        expectedBenefit: 'Improved pedestrian and road safety at night.',
+        feasibility: 'High',
+        recommendationReason: 'Quick win for high-pedestrian-activity areas.',
+      },
+    ],
+    traffic_signal: [
+      {
+        id: 'signal-repair',
+        title: 'Signal Repair/Recalibration',
+        category: 'traffic_signal',
+        description: 'Inspect and repair faulty traffic signal electronics and timing.',
+        urgency: 'Immediate',
+        estimatedCostLabel: '₹10,000–80,000 (illustrative)',
+        expectedBenefit: 'Reduces collision risk at critical junctions.',
+        feasibility: 'Medium',
+        recommendationReason: 'Highest priority at junctions with pedestrian crossing.',
+      },
+    ],
+    pedestrian_safety: [
+      {
+        id: 'ped-infra',
+        title: 'Pedestrian Infrastructure',
+        category: 'pedestrian_safety',
+        description: 'Install or repair footpaths, crossings, guardrails, or signage.',
+        urgency: 'Short-term',
+        estimatedCostLabel: '₹30,000–2,00,000 (illustrative)',
+        expectedBenefit: 'Reduces pedestrian injury risk, especially near schools.',
+        feasibility: 'Medium',
+        recommendationReason: 'Prioritise if near school zone or hospital.',
+      },
+    ],
+    collision: [
+      {
+        id: 'speed-control',
+        title: 'Speed Mitigation Measures',
+        category: 'collision',
+        description: 'Install speed humps, signage, or rumble strips at collision-prone spots.',
+        urgency: 'Short-term',
+        estimatedCostLabel: '₹20,000–1,00,000 (illustrative)',
+        expectedBenefit: 'Reduces collision frequency and severity.',
+        feasibility: 'High',
+        recommendationReason: 'Data-driven placement at historically high-collision locations.',
+      },
+    ],
     other: [],
   };
 
